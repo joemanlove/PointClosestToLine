@@ -59,4 +59,7 @@ void draw() {
     //draw an ellipse at the point on the line from pt 1 to pt2 closest to pt3
     ellipse(closestPt.x, closestPt.y, 10, 10);
   }
+  
+  //prints distance from pt3 to line
+  println(uPerpV.mag());
 }
