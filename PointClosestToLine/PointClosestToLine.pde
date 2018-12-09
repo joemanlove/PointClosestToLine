@@ -3,6 +3,7 @@ PVector u = new PVector(0, 0);
 PVector uParV = new PVector(0, 0);
 PVector uPerpV = new PVector(0, 0);
 PVector v = new PVector(0, 0);
+PVector closestPt = new PVector(0, 0);
 
 //Point 1
 float x1;
@@ -48,11 +49,14 @@ void draw() {
 
   //set fill to red
   fill(255, 0, 0);
+  //set closest
+  closestPt.set(x3-uPerpV.x,y3-uPerpV.y);
+  
   //check that the result is between the points...
-  float d1 = dist(x3-uPerpV.x,y3-uPerpV.y,x1,y1);
-  float d2 = dist(x3-uPerpV.x,y3-uPerpV.y,x2,y2);
+  float d1 = dist(closestPt.x,closestPt.y,x1,y1);
+  float d2 = dist(closestPt.x,closestPt.y,x2,y2);
   if (d1<v.mag()&&d2<v.mag()) {
     //draw an ellipse at the point on the line from pt 1 to pt2 closest to pt3
-    ellipse(x3-uPerpV.x, y3-uPerpV.y, 10, 10);
+    ellipse(closestPt.x, closestPt.y, 10, 10);
   }
 }
