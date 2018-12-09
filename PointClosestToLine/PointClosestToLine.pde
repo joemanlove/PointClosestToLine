@@ -5,12 +5,12 @@ PVector uPerpV = new PVector(0,0);
 PVector v = new PVector(0,0);
 
 //Point 1
-float x1=0;
-float y1=0;
+float x1;
+float y1;
 
 //Point 2
-float x2= width/2;
-float y2 = height/2;
+float x2;
+float y2;
 
 //Point 3
 float x3;
@@ -19,14 +19,18 @@ float y3;
 
 void setup(){
   size(1000,700);
-  x2= width;
-  y2 = height;
+  x1= random(width);
+  y1= random(height);
+  x2= random(width);
+  y2 = random(height);
   
 }
 
 void draw(){
   //wipe background
   background(255);
+  //line from pt1 to pt2
+  line (x1,y1,x2,y2);
   //set x3,y3 to Mouse
   x3 = mouseX;
   y3 = mouseY;
